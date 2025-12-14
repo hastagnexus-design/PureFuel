@@ -1,0 +1,108 @@
+.delivery-page{
+  background:#ffffff;
+  font-family:'Poppins',sans-serif;
+  position: relative;
+  z-index: 10;
+  margin-top: 40px;
+}
+
+/* FOOD CARDS */
+.delivery-food-card{
+  width:100%;
+  border-radius:20px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow:hidden;
+}
+
+/* CARD SIZES */
+.delivery-small-card{ height:200px; }
+.delivery-big-card{ height:420px; }
+.delivery-tall-card{ height:420px; }
+
+/* IMAGE */
+/* .delivery-img{
+  max-width:180px;
+  margin-top:10px;
+} */
+
+/* ALIGNMENT */
+.delivery-custom-right{
+  margin-left:50px;
+}
+
+/* ROW FIX */
+.row.align-items-center{
+  align-items:start !important;
+}
+
+.row.align-items-center > div{
+  margin-top:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .delivery-big-card,
+  .delivery-tall-card{
+    height:350px;
+  }
+
+  .delivery-custom-right{
+    margin-left:0 !important;
+  }
+
+  .row.align-items-center > div{
+    text-align:center;
+    margin-top:15px !important;
+  }
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  /* Stack all columns vertically */
+  .delivery-page .row.g-4 {
+    flex-direction: column;
+  }
+
+  /* Add spacing between stacked cards */
+  .delivery-page .row.g-4 > div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Ensure all cards have proper height */
+  .delivery-small-card,
+  .delivery-big-card,
+  .delivery-tall-card {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  /* Center the center image (already img tag) */
+  .delivery-img {
+    max-width: 140px;
+    display: block;
+    margin: 0 auto 20px auto;
+
+  }
+
+  /* Remove extra margins for top section */
+  .delivery-custom-right {
+    margin-left: 0 !important;
+  }
+
+  /* Center-align text for top section */
+  .row.align-items-center > div {
+    text-align: center;
+    margin-top: 15px !important;
+  }
+}
+
+
+@media (max-width:768px){
+  .delivery-food-card{
+    overflow: visible;
+  }
+}
+
