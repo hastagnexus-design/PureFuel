@@ -8,42 +8,37 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-
     <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
     <link href="css/delivery.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
 </head>
 
 <body>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script> AOS.init();</script>
     <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-   
+
     <!-- 🔵 MAIN CONTENT-->
 
-     <section class="home-page">
+    <section id="home-page" class="home-page py-3">
         <div class="container-fluid main-box p-0">
 
             <!-- HEADER -->
             <header class="d-flex justify-content-between align-items-center px-4 py-3">
                 <div class="logo">
-                    <img src="img/Logo.png" width="10%">
+                    <img src="img/Logo.png" width="20%">
                 </div>
 
                 <!-- <nav class="d-none d-md-flex gap-4">
@@ -88,7 +83,7 @@
         </div>
     </section>
 
-   
+
     <section id="About" class="py-0">
 
         <!-- About Start -->
@@ -99,12 +94,12 @@
                 </div>
                 <div class="row gx-5 gy-4 align-items-center">
                     <div class="col-lg-6 col-xl-4 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="About-item  p-3 mb-2">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="d-flex">
-                                        <div class="About-content text-start">
-                                            <a href="#" class="h4 d-inline-block mb-3">Nature-Inspired Wellness</a>
+                        <div class="About-item  p-3 mb-2" style="margin-top:5rem">
+                            <div class="row" >
+                                <div class="col-12" >
+                                    <div class="d-flex" >
+                                        <div class="About-content text-start" >
+                                            <a href="#" class="h4 d-inline-block mb-3" >Nature-Inspired Wellness</a>
                                             <p class="mb-0">Pure herbal juice blends made from Keelanelli, Nellikai,
                                                 Avarampoo, and other Tamil herbs for natural wellness.</p>
                                         </div>
@@ -156,7 +151,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-4 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="About-item  p-3 mb-2">
+                        <div class="About-item  p-3 mb-2" style="margin-top:5rem">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="d-flex">
@@ -214,8 +209,6 @@
         </div>
     </section>
     <!-- About End -->
-
-
 
     <section id="products" class="py-0">
         <div class="container-fluid products pt-6 pb-6 px-0">
@@ -657,8 +650,8 @@
                 </div>
             </div>
         </div>
-<script src="script.js"></script>
-    
+        
+
     </section>
     <!-- products End -->
 
@@ -876,7 +869,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal 8 -->
     <div class="modal fade" id="productModal8" tabindex="-1" aria-labelledby="productModalLabel8" aria-hidden="true">
@@ -1119,11 +1111,9 @@
         </div>
     </div>
 
-
+<!-- Fast moving products start-->
     <section class="menu-section">
-
         <h4 class="menu-title text-uppercase text-primary">Fast Moving Products</h4>
-
         <div class="container mt-4">
 
             <!-- <div class="row justify-content-center mb-4">
@@ -1182,7 +1172,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="item-card text-center justify-content-between align-items-center p-4"
+                    <div class="promo-card text-center justify-content-between align-items-center p-4"
                         style="background:#ffe08a; border-radius:15px;">
                         <h4>California Fresh Fruit</h4>
                         <p>SALE 50% OFF</p>
@@ -1196,7 +1186,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="item-card text-center justify-content-between align-items-center p-4"
+                    <div class="promo-card text-center justify-content-between align-items-center p-4"
                         style="background:#ff8a8a; border-radius:15px;">
                         <h4>100% Pure Natural Juice</h4>
                         <p>Fresh and Organic</p>
@@ -1204,16 +1194,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </section>
-
-
+<!-- Fast moving products end -->
+ 
     <!-- Delivery Page -->
-
-    <section class="delivery-page">
+    <section id="delivery-page" class="delivery-page py-0">
 
         <!-- TOP SECTION -->
         <section class="container py-4">
@@ -1231,7 +1217,7 @@
 
                 <!-- CENTER IMAGE -->
                 <div class="col-lg-4 text-center">
-                    <img src="img/delivery.png" style="width:150px" class="img-fluid delivery-img">
+                    <img src="img/delivery.png" style="width:200px" class="img-fluid delivery-img">
                 </div>
 
                 <!-- RIGHT CONTENT -->
@@ -1252,7 +1238,6 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="delivery-food-card delivery-small-card"
                         style="background-image:url('img/AppleDel.png');"></div>
-
                     <div class="delivery-food-card delivery-small-card mt-4"
                         style="background-image:url('img/MangoDel.png');"></div>
                 </div>
@@ -1272,83 +1257,48 @@
                     <div class="delivery-food-card delivery-tall-card" style="background-image:url('img/KiwiDel.png');">
                     </div>
                 </div>
-
             </div>
         </section>
 
     </section>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- Delivery Page End -->
-    <footer class="custom-footer">
-        <div class="container">
+    <footer class="footer-section">
+        <div class="footer-container">
 
-            <!-- Logo -->
-            <div class="text-center mb-4">
-                <img src="img/New Logo Final.png" alt="Pure Fuel Logo" class="footer-logo">
+            <!-- LEFT IMAGE -->
+            <div class="footer-image">
+                <img src="img/Logo.png" width="100px" alt="Juice Image">
             </div>
 
-            <div class="row justify-content-between align-items-start">
+            <!-- RIGHT CONTENT (GREEN AREA MOVES HERE) -->
+            <div class="footer-content">
 
-                <!-- LEFT SIDE -->
-                <div class="col-md-4 text-md-start text-center mb-4">
+                <!-- <div class="footer-logo-box">
+        <img src="img/footer-logo.png" alt="Fresh Juice Logo">
+      </div> -->
 
-                    <div class="footer-links">
-                        <a href="#home">PURE FUEL</a>
-                        <!-- <a href="#aboutus">About Us</a>
-                        <a href="#products">Products</a>
-                        <a href="#menu-section">FastMovers</a>
-                        <a href="#delivery">Delivery</a> -->
-                    </div>
-
-                    <div class="footer-social mt-4">
-                        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-
-
+                <div class="footer-address">
+                    <p class="footer-store">THE PURE FUEL</p>
+                    <p>HASTAG NEXUS PRIVATE LIMITED</p>
+                    <p>H.94 Periyar Nagar,</p>
+                    <p>80 Feet Road, ERODE - 638 001.</p>
+                    <p>✉️ hello@freshjuice.com</p>
                 </div>
-
-                <!-- CENTER SIDE -->
-                <div class="col-md-4 text-center mb-4">
-                    <p class="footer-phone">
-                        <i class="fas fa-phone-alt me-2"></i>
-                        <a href="tel:+919999999999">+91 9999-999-999</a>
-                    </p>
-
-                    <p class="footer-email">
-                        <i class="fas fa-envelope me-2"></i>
-                        <a href="mailto:purefuel@gmail.com">purefuel@gmail.com</a>
-                    </p>
-
-                    <p class="footer-address">
-                        Office 111B18, WeWork Enam Sambhav C-20, G-Block,<br>
-                        Bandra Kurla Complex, Mumbai, Maharashtra — 400051
-                    </p>
+                <div class="footer-social">
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
-
-                <!-- RIGHT SIDE -->
-                <div class="col-md-4 text-md-end text-center mb-4">
-                    <img src="img/logo.png" class="fssai-logo" alt="FSSAI Logo">
-                    <p class="footer-license">Lic No 11524997000486</p>
-                </div>
-
             </div>
-
-            <hr class="footer-line">
-
-            <!-- Bottom row -->
-            <div class="d-flex justify-content-between align-items-center flex-wrap px-2 small-footer">
-                <p class="mb-0">© 2025 PURE FUEL</p>
-                <a href="#" class="privacy-link">Privacy Policy</a>
-            </div>
-
         </div>
+
+        <p class="footer-copy">© 2025 Fresh Juice. All Rights Reserved.</p>
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -1363,7 +1313,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/modifiers.min.js"></script>
     <script src="js/script.js"></script>
-     <script src="js/home.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

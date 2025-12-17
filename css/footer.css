@@ -1,0 +1,90 @@
+.footer-section {
+  background: #fff;
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+
+/* LEFT IMAGE */
+.footer-image img {
+  max-width: 280px;
+}
+
+/* RIGHT CONTENT */
+.footer-content {
+  max-width: 420px;
+  text-align: left;
+}
+
+/* LOGO */
+.footer-logo-box img {
+  max-width: 140px;
+  margin-bottom: 20px;
+}
+
+/* ADDRESS */
+.footer-address p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.footer-store {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* SOCIAL ICON PLACEHOLDERS */
+/* SOCIAL */
+.footer-social {
+  margin: 18px 0;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  margin: 0 6px;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #198754;
+  color: #fff;
+  border-color: #198754;
+}
+
+
+/* COPYRIGHT */
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+}

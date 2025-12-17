@@ -6,7 +6,7 @@ const fruitIcons = [
 ];
 
 // COLORS FOR BACKGROUND
-const colors = ["#e8a70a", "#ff6b6b", "#1dd1a1"];
+const colors = ["#f6e1c5ff", " #EAF7F2", "#FFE5DC"];
 
 // ELEMENTS
 const fruitsContainer = document.querySelector(".fruits");
@@ -20,7 +20,7 @@ const title = document.querySelector(".text-box h1 span");
 // Text + bottle data
 const fruitData = [
   {
-    img: "img/juice3.png",
+    img: "img/juice1.png",
     blend: "BLEND NO. 3",
     name: "MANGO"
   },

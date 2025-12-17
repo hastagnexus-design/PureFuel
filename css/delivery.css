@@ -21,11 +21,6 @@
 .delivery-big-card{ height:420px; }
 .delivery-tall-card{ height:420px; }
 
-/* IMAGE */
-/* .delivery-img{
-  max-width:180px;
-  margin-top:10px;
-} */
 
 /* ALIGNMENT */
 .delivery-custom-right{
@@ -81,10 +76,10 @@
 
   /* Center the center image (already img tag) */
   .delivery-img {
-    max-width: 140px;
+    max-width: 100px !important;
     display: block;
     margin: 0 auto 20px auto;
-
+    
   }
 
   /* Remove extra margins for top section */
@@ -105,4 +100,26 @@
     overflow: visible;
   }
 }
+
+.delivery-img {
+  position: relative;
+  transform: translateX(0);
+  animation: deliveryMove 5s linear infinite;
+}
+
+@keyframes deliveryMove {
+  0% {
+    transform: translateX(0);       /* start position */
+  }
+   20% {
+    transform: translateX(-100px);    /* go back MORE */
+   }
+  100% {
+    transform: translateX(100px);   /* move forward continuously */
+  }
+}
+
+
+
+
 

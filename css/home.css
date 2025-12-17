@@ -1,6 +1,6 @@
 .main-box {
     max-width: 1200px;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -10,11 +10,11 @@
 .home-page{
     width: 100%;
     min-height: 100vh;
-    background: #ff6f6f; 
+    background: #EAF7F2; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 10px 0;
 }
 
 
@@ -41,18 +41,23 @@ header nav a {
 
 /* LEFT BG */
 .left-bg {
-    background: #e8a70a;
+    background: #FAF3EA;
     height: 100%;
     /* min-height: 500px; */
 }
 
-/* BOTTLE */
 /* .bottle {
-    width: 220px;
     animation: float 3s ease-in-out infinite;
-} */
+}  */
 
 /* RIGHT TEXT */
+.text-box{
+  position: absolute;
+  top:60px;
+}
+
+
+
 .text-box h3 {
     font-size: 16px;
     letter-spacing: 3px;
@@ -85,14 +90,10 @@ header nav a {
 
 /* FRUITS */
 
-
 .fruits img:hover {
     transform: scale(1.2);
-}
+} 
 
-#fruits .fruits {
-    margin-top: 90px; /* Value increase pannalum keela pogum */
-}
 
 .title-line {
     white-space: nowrap;
@@ -139,17 +140,31 @@ header nav a {
     }
 }
 
-
 @media (max-width: 768px) {
-    #fruits .fruits {
-        margin-top: 5px;
-    }
-/* 
-    .learn-btn {
-        margin-bottom: 10px;
+
+    .text-box{
+        position: absolute;
+        top: 20px;   /* 60px romba keela irundha reduce pannalaam */
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
-    .text-box {
-        padding-bottom: 10px;
-    } */
+    .fruits {
+        position: absolute;
+        bottom:40px;   /* space below image */
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-box {
+        padding-bottom: 60px; /* fruits keela space */
+    }
+
 }
+
+
+
+
