@@ -1,170 +1,410 @@
-.main-box {
-    max-width: 1200px;
-    /* background: #fff; */
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+/* --- GLOBAL VARIABLES & TYPOGRAPHY --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+:root {
+    --primary-green: #2d6a4f;
+    --light-green: #d8f3dc;
+    --accent-orange: #ff9f1c;
+    --accent-yellow: #fad643;
+    --dark-text: #1b4332;
+    --light-bg: #f7fff7;
+    --glass-white: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --shadow-soft: 0 15px 35px rgba(45, 106, 79, 0.1);
+    --shadow-hover: 0 20px 40px rgba(45, 106, 79, 0.2);
 }
 
-.home-page{
-    width: 100%;
-    min-height: 100vh;
-    background: #EAF7F2; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    overflow-x: hidden;
 }
 
-
-/* HEADER */
-header .logo {
-    font-size: 24px;
-    font-weight: 700;
+h1, h2, h3, h4, h5 {
+    color: var(--dark-text);
+    font-weight: 800;
 }
 
-header nav a {
-    text-decoration: none;
-    font-size: 14px;
-    color: black;
-    letter-spacing: 2px;
+/* --- NAVIGATION --- */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 30px !important;
 }
 
 .buy-btn {
-    padding: 8px 20px;
-    background: black;
-    color: white;
-    border-radius: 25px;
-    font-size: 14px;
+    background: var(--dark-text);
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* LEFT BG */
+.buy-btn:hover {
+    background: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+/* --- HERO SECTION --- */
+.home-page {
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8f5e9 100%) !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Space for nav */
+}
+
+.main-box {
+    background: transparent !important; /* Remove box container look */
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
 .left-bg {
-    background: #FAF3EA;
-    height: 100%;
-    /* min-height: 500px; */
+    background: transparent !important;
 }
 
-/* .bottle {
-    animation: float 3s ease-in-out infinite;
-}  */
-
-/* RIGHT TEXT */
-.text-box{
-  position: absolute;
-  top:60px;
-}
-
-
-
+/* Hero Text */
 .text-box h3 {
-    font-size: 16px;
-    letter-spacing: 3px;
-    color: #555;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.3s;
+    font-size: 1.2rem;
+    color: var(--accent-orange) !important;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 .text-box h1 {
-    font-size: 55px;
-    margin: 10px 0;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.6s;
+    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1;
+    color: var(--dark-text);
 }
 
 .text-box h1 span {
-    color: #d99200;
+    color: var(--primary-green) !important;
+    font-style: normal;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6rem;
 }
 
 .learn-btn {
-    padding: 12px 28px;
-    background: black;
-    color: white;
-    border-radius: 25px;
-    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-green), #40916c);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(45, 106, 79, 0.3);
+    transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(45, 106, 79, 0.4);
+}
+
+/* Hero Bottle Animation */
+/* .bottle {
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+} */
+
+/* .bottle:hover {
+    transform: rotate(5deg) scale(1.05);
+} */
+
+/* Fruit Icons */
+.fruits img {
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* --- ABOUT SECTION --- */
+#About {
+    padding: 80px 0;
+    background: #fff;
+    position: relative;
+}
+
+.About-item {
+    background: #fff !important;
+    border: 1px solid #f0f0f0 !important;
+    border-radius: 25px !important;
+    box-shadow: var(--shadow-soft) !important;
+    padding: 30px !important;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.About-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-green) !important;
+    box-shadow: var(--shadow-hover) !important;
+}
+
+/* Remove the old green corner overlay for a cleaner look */
+.About-item::after { display: none; }
+
+.About-btn {
+    background: var(--light-green) !important;
+    color: var(--primary-green) !important;
+    width: 60px;
+    height: 60px;
+}
+
+.About-btn i {
+    color: var(--primary-green) !important;
+}
+
+.About-content a {
+    color: var(--dark-text);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* --- PRODUCTS SECTION (Infinite Scroll) --- */
+#products {
+    background: linear-gradient(180deg, #fff 0%, #f1f8e9 100%) !important;
+    animation: none !important; /* Removed dizzying animation */
+    padding: 100px 0;
+}
+
+#products h1 {
+    background: transparent;
+    color: var(--primary-green);
+    font-size: 3rem;
+    box-shadow: none;
+    margin-bottom: 50px;
+}
+
+/* Product Card Styling */
+.products .products-inner {
+    background: var(--glass-white);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px; /* Pill shape cards */
+    padding: 20px;
+    padding-top: 60px; /* Space for bottle pop-out */
+    box-shadow: var(--shadow-soft);
+    margin-top: 60px; /* Space for bottle */
+    text-align: center;
+    position: relative;
+    overflow: visible; /* Allow bottle to stick out */
+}
+
+/* Bottle Pop-out Effect */
+.products .products-inner img {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 180px; /* Taller bottles */
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.products-item:hover .products-inner img {
+    transform: translateX(-50%) scale(1.15) rotate(3deg);
+}
+
+/* Remove old hover colored backgrounds */
+.products-inner::before { display: none; }
+
+.products-text {
+    margin-top: 80px; /* Push text down */
+}
+
+.products-text h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.products-text h6 {
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.products-text button {
+    background: var(--dark-text);
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     margin-top: 10px;
 }
 
-/* FRUITS */
-
-.fruits img:hover {
-    transform: scale(1.2);
-} 
-
-
-.title-line {
-    white-space: nowrap;
-    /* prevents line break */
+.products-text button:hover {
+    background: var(--accent-orange);
+    transform: none;
+    box-shadow: none;
 }
 
-.title-line span.fruit-name {
-    display: inline-block;
-    /* keep same line */
-    margin-left: 8px;
-    /* spacing */
+/* --- FAST MOVING PRODUCTS (Menu) --- */
+.menu-section {
+    background: #fff !important; /* Clean background */
+    padding: 80px 0;
 }
 
-/* MOBILE VIEW */
-@media(max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+.menu-section::before { display: none; } /* Remove gradients overlay */
 
-    /* .bottle {
-        width: 160px;
-    } */
-
-    .text-box {
-        text-align: center;
-        padding-top: 20px;
-    }
-
-    .text-box h1 {
-        font-size: 36px;
-    }
+.menu-title {
+    color: var(--dark-text) !important;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 800;
 }
 
-/* FLOAT ANIMATION */
-/* @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-} */
-
-/* FADE IN */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.item-card {
+    border: none;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 20px;
+    transition: all 0.3s ease;
 }
 
+.item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.item-card img {
+    border-radius: 15px;
+    background: #f8f9fa;
+}
+
+.item-card .btn-success {
+    background-color: var(--primary-green);
+    border: none;
+    border-radius: 50px;
+    padding: 5px 15px;
+}
+
+/* Promo Cards */
+.promo-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+}
+
+/* --- DELIVERY SECTION --- */
+.delivery-page {
+    background: #f1f8e9; /* Light green tint */
+    margin-top: 0;
+    padding: 80px 0;
+    border-radius: 0;
+}
+
+.delivery-text h2 {
+    font-size: 3rem;
+    color: var(--primary-green);
+    font-family: 'Playfair Display', serif;
+}
+
+.delivery-food-card {
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+.delivery-food-card:hover {
+    transform: scale(1.02);
+}
+
+.delivery-big-card {
+    position: relative;
+}
+
+.delivery-big-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    z-index: 0;
+}
+
+.delivery-big-card h4, .delivery-big-card h2, .delivery-big-card button {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- MODALS --- */
+.modal-content {
+    border-radius: 25px;
+    border: none;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--primary-green);
+    color: white;
+    padding: 20px;
+}
+
+.modal-body {
+    padding: 30px;
+    font-size: 1rem;
+}
+
+.modal-footer {
+    background: #f9f9f9;
+}
+
+/* --- FOOTER --- */
+.custom-footer {
+    background: var(--dark-text);
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-links a, .footer-social a, .footer-phone a, .footer-email a {
+    color: rgba(255,255,255,0.7);
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: var(--accent-orange);
+    transform: translateX(5px);
+}
+
+.footer-address {
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-line {
+    border-color: rgba(255,255,255,0.1);
+}
+
+.small-footer {
+    color: rgba(255,255,255,0.4);
+}
+
+/* --- RESPONSIVE TWEAKS --- */
 @media (max-width: 768px) {
-
-    .text-box{
-        position: absolute;
-        top: 20px;   /* 60px romba keela irundha reduce pannalaam */
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
-
-    .fruits {
-        position: absolute;
-        bottom:40px;   /* space below image */
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .main-box {
-        padding-bottom: 60px; /* fruits keela space */
-    }
-
+    .text-box h1 { font-size: 3rem; }
+    .text-box h1 span { font-size: 3.5rem; }
+    .main-box { padding-bottom: 20px; }
+    .products .products-inner { margin-top: 50px; }
+    .products .products-inner img { height: 140px; top: -50px; }
 }
-
-
-
-

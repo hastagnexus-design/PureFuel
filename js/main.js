@@ -88,7 +88,7 @@
 
   const itemCards = document.querySelectorAll('.item-card');
   const promoCards = document.querySelectorAll('.promo-card');
-
+// const productCards = document.querySelectorAll('.products .products-item.animate-fade-up');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -115,6 +115,6 @@
 
   itemCards.forEach(card => observer.observe(card));
   promoCards.forEach(card => observer.observe(card));
-
+//   productCards.forEach(card => observer.observe(card));
 
 

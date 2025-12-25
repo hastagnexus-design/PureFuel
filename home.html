@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PURE FUEL | Nature's Essence</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Google Fonts (Premium Look) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Bootstrap & Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ---------------------------
+       GLOBAL VARIABLES & RESET
+       --------------------------- */
+        :root {
+            --primary: #4CAF50;
+            /* Fresh Green */
+            --secondary: #FF9800;
+            /* Juicy Orange */
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #388E3C;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        /* ---------------------------
+       HERO SECTION
+       --------------------------- */
+        .home-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #e8f5e9 0%, #ffffff 70%);
+        }
+
+        /* Floating Animation for Bottle */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero-bottle {
+            max-height: 80vh;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+            animation: float 4s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .hero-text h3 {
+            color: var(--secondary);
+            letter-spacing: 2px;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Decorative Background Text */
+        .bg-text-deco {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15vw;
+            font-weight: 900;
+            color: rgba(76, 175, 80, 0.05);
+            z-index: 0;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* ---------------------------
+       ABOUT SECTION (Glassmorphism)
+       --------------------------- */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .About-btn i {
+            color: var(--primary);
+            background: rgba(76, 175, 80, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------------------------
+       PRODUCTS SCROLL
+       --------------------------- */
+        .products-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        .products-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .products-item {
+            width: 300px;
+            margin: 0 15px;
+        }
+
+        .products-inner {
+            background: #fff;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-inner:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .products-inner img {
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .products-inner:hover img {
+            transform: scale(1.05);
+        }
+
+        .infinite-wrapper {
+            overflow: hidden;
+            padding: 20px 0;
+            background: linear-gradient(to right, #fff, #f4f9f4, #fff);
+        }
+
+        .scroll-track {
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .products-track-bottom {
+            animation: scroll-reverse 40s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* ---------------------------
+       MENU / FAST MOVERS
+       --------------------------- */
+        .item-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .promo-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .promo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ---------------------------
+       DELIVERY SECTION
+       --------------------------- */
+        .delivery-page {
+            background: #fff;
+            position: relative;
+        }
+
+        .delivery-big-card {
+            height: 400px;
+            border-radius: 25px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delivery-big-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        }
+
+        .delivery-big-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-small-card {
+            height: 190px;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow);
+        }
+
+        .delivery-tall-card {
+            height: 400px;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow);
+        }
+
+        /* ---------------------------
+       FOOTER
+       --------------------------- */
+        .custom-footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        .footer-logo {
+            filter: brightness(0) invert(1);
+            max-width: 150px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 5px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsive Tweaks */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-bottle {
+                max-height: 50vh;
+            }
+
+            .bg-text-deco {
+                font-size: 20vw;
+            }
+        }
+
+        /* Container for alignment */
+        .hero-bottle {
+            max-height: 70vh;
+            z-index: 5;
+            position: relative;
+            transition: transform 0.5s ease-out, opacity 0.5s ease;
+        }
+
+        /* The Splash Image Styles */
+        .hero-splash {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            /* Start tiny */
+            width: 600px;
+            /* Big enough to cover bottle */
+            max-width: 100%;
+            z-index: 4;
+            /* Behind bottle */
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Bouncy effect */
+            pointer-events: none;
+        }
+
+        /* 1. STATE: SPLASH EXPLODES */
+        .hero-splash.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2) rotate(15deg);
+        }
+
+        /* 2. STATE: BOTTLE HIDES (During Splash) */
+        .hero-bottle.change {
+            transform: scale(0.5) rotate(-10deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 🔵 HERO SECTION -->
+    <!-- 🔵 HERO SECTION -->
+    <section class="home-page" id="home">
+        <div class="bg-text-deco">PURE FUEL</div>
+
+        <div class="container-fluid p-0">
+            <!-- Header/Nav -->
+            <header class="position-absolute w-100 top-0 start-0 p-4 d-flex justify-content-between align-items-center"
+                style="z-index: 10;">
+                <div class="logo">
+                    <h3 class="fw-bold text-success m-0"><i class="fas fa-leaf me-2"></i>PURE FUEL</h3>
+                </div>
+                <div class="d-none d-md-block">
+                    <button class="btn btn-primary px-4 shadow-sm">Shop Now</button>
+                </div>
+            </header>
+
+            <div class="row g-0 align-items-center min-vh-100">
+                <!-- Left Text -->
+                <div class="col-lg-4 col-12 ps-lg-5 text-center text-lg-start z-3 hero-text">
+                    <h3 id="blend-text">Blend No. 1</h3>
+                    <h1 id="main-title">Indian<br><span id="fruit-name"
+                            style="color:var(--secondary)">MANGO</span><br>Delight</h1>
+                    <p class="lead text-muted mb-4">100% Organic, Cold-pressed, and packed with nature's raw energy.</p>
+                    <div class="btn btn-outline-dark rounded-pill px-5 py-2">Discover More</div>
+                </div>
+
+                <!-- 🔵 CENTER BOTTLE WITH SPLASH -->
+                <div class="col-lg-4 col-12 text-center position-relative d-flex justify-content-center align-items-center"
+                    style="height: 500px;">
+
+                    <!-- The Splash Image (Initially Hidden) -->
+                    <!-- You need a splash image like 'img/splash.png'. A generic yellow/orange paint splash works best -->
+                    <img src="img/juice2.png" class="hero-splash" alt="Splash">
+
+                    <!-- The Bottle -->
+                    <img src="img/juice1.png" class="img-fluid hero-bottle" alt="Juice Bottle">
+
+                </div>
+
+                <!-- Right Fruits/Nutrients -->
+                <div class="col-lg-4 col-12 pe-lg-5 text-center text-lg-end z-3">
+                    <div class="d-flex flex-column align-items-center align-items-lg-end gap-4" id="fruit-icons">
+                        <div class="glass-card d-inline-block p-3 text-center" style="width: 140px;">
+                            <img src="img/fruit1.png" width="50" class="mb-2 fruit-img-1">
+                            <h6 class="m-0 fw-bold">Fresh Fruit</h6>
+                        </div>
+                        <div class="glass-card d-inline-block p-3 text-center" style="width: 140px;">
+                            <i class="fas fa-bolt text-warning fa-2x mb-2"></i>
+                            <h6 class="m-0 fw-bold">Energy Boost</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔵 ABOUT SECTION -->
+    <section id="aboutus" class="py-5 bg-light position-relative">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" style="max-width: 800px;">
+                <h5 class="text-primary text-uppercase letter-spacing-2">Why Choose Us</h5>
+                <h2 class="display-5 text-dark mb-3">Pure Ingredients, <span class="text-secondary">Real Results</span>
+                </h2>
+                <p class="text-muted">We don't just sell juice; we bottle nature's finest healing properties.</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <!-- Left Column -->
+                <div class="col-lg-4">
+                    <div class="glass-card mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex align-items-center">
+                            <div class="About-btn flex-shrink-0"><i class="fas fa-leaf fa-2x"></i></div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">Nature-Inspired</h5>
+                                <p class="small text-muted mb-0">Keelanelli, Nellikai, and ancient Tamil herbs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex align-items-center">
+                            <div class="About-btn flex-shrink-0"><i class="fas fa-fire-alt fa-2x text-danger"></i></div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">Daily Detox</h5>
+                                <p class="small text-muted mb-0">Flush toxins gently every single day.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex align-items-center">
+                            <div class="About-btn flex-shrink-0"><i class="fas fa-heartbeat fa-2x text-danger"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">Heart Support</h5>
+                                <p class="small text-muted mb-0">Crafted to support heart and bone strength.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Image -->
+                <div class="col-lg-4 text-center d-none d-lg-block" data-aos="zoom-in">
+                    <img src="img/dharshiniu.png" class="img-fluid rounded-circle shadow-lg p-2 bg-white"
+                        alt="Fresh Juice" style="max-height: 400px; object-fit: cover;">
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-4">
+                    <div class="glass-card mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex align-items-center text-end flex-row-reverse">
+                            <div class="About-btn flex-shrink-0 ms-3"><i class="fas fa-carrot fa-2x text-warning"></i>
+                            </div>
+                            <div class="me-0">
+                                <h5 class="fw-bold">Fresh & Honest</h5>
+                                <p class="small text-muted mb-0">Real fruit, palm jaggery, no white sugar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex align-items-center text-end flex-row-reverse">
+                            <div class="About-btn flex-shrink-0 ms-3"><i
+                                    class="fas fa-smile-beam fa-2x text-warning"></i></div>
+                            <div class="me-0">
+                                <h5 class="fw-bold">Natural Glow</h5>
+                                <p class="small text-muted mb-0">Beetroot & Apple for radiant skin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex align-items-center text-end flex-row-reverse">
+                            <div class="About-btn flex-shrink-0 ms-3"><i class="fas fa-bolt fa-2x text-warning"></i>
+                            </div>
+                            <div class="me-0">
+                                <h5 class="fw-bold">Clean Energy</h5>
+                                <p class="small text-muted mb-0">No caffeine crashes, just real fruit power.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔵 PRODUCTS SECTION -->
+    <section id="products" class="py-5 overflow-hidden">
+        <div class="container-fluid px-0">
+            <div class="text-center mx-auto mb-5">
+                <h2 class="display-5 products-title">Our Pure Collection</h2>
+                <p class="text-muted">Swipe to discover your perfect blend</p>
+            </div>
+
+            <!-- Generic Dynamic Modal -->
+            <div class="modal fade" id="genericProductModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold">Product Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/juicebootle.jpg" class="img-fluid mb-3 w-100 rounded" alt="">
+                            <div class="modal-description mb-3"></div>
+                            <h5 class="modal-price text-primary fw-bold mb-3"></h5>
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold">Benefits:</h6>
+                                <ul class="modal-benefits list-unstyled mb-0"></ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Button Update in HTML -->
+            <button class="btn btn-light px-3" data-bs-toggle="modal" data-bs-target="#genericProductModal"
+                data-id="product-liverlight"> <!-- Matches JS ID -->
+                Read More <i class="bi bi-chevron-double-right ms-1"></i>
+            </button>
+
+            <!-- Bottom Row Scrolling Right (Optional, can be added similar to above with 'products-track-bottom' class) -->
+        </div>
+    </section>
+
+    <!-- 🔵 FAST MOVING PRODUCTS -->
+    <section class="menu-section py-5" style="background: #fdfdfd;">
+        <div class="container">
+            <h4 class="text-center mb-5 display-6 fw-bold">Daily Essentials</h4>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="item-card">
+                        <img src="img/item1.jpg" alt="Product" class="mb-3" style="background:#eee; height:200px;">
+                        <h5>Fresh Fruit Bowl</h5>
+                        <p class="text-muted small">Mixed seasonal goodness</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-3">
+                            <span class="fw-bold h5 mb-0 text-success">₹130</span>
+                            <button class="btn btn-dark btn-sm rounded-circle p-2"><i
+                                    class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="item-card">
+                        <img src="img/item2.jpg" alt="Product" class="mb-3" style="background:#eee; height:200px;">
+                        <h5>Green Apple Crunch</h5>
+                        <p class="text-muted small">Farm fresh green apples</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-3">
+                            <span class="fw-bold h5 mb-0 text-success">₹125</span>
+                            <button class="btn btn-dark btn-sm rounded-circle p-2"><i
+                                    class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="item-card">
+                        <img src="img/item3.jpg" alt="Product" class="mb-3" style="background:#eee; height:200px;">
+                        <h5>Berry Smoothie</h5>
+                        <p class="text-muted small">Antioxidant rich blend</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-3">
+                            <span class="fw-bold h5 mb-0 text-success">₹150</span>
+                            <button class="btn btn-dark btn-sm rounded-circle p-2"><i
+                                    class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promo Banners -->
+            <div class="row mt-5 g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="promo-card" style="background-image: url('img/juice01.jpg'); background-size: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="promo-card p-4 text-center" style="background: #ffe08a;">
+                        <h4 class="fw-bold">Summer Sale</h4>
+                        <p class="text-dark">Flat 50% Off on subscriptions</p>
+                        <button class="btn btn-light rounded-pill px-4 text-warning fw-bold">ORDER</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="promo-card" style="background-image: url('img/juice02.jpg'); background-size: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="promo-card p-4 text-center text-white" style="background: #ef5350;">
+                        <h4 class="fw-bold">100% Organic</h4>
+                        <p>Certified Fresh</p>
+                        <button class="btn btn-light rounded-pill px-4 text-danger fw-bold">EXPLORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔵 DELIVERY SECTION -->
+    <section class="delivery-page py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h5 class="text-success fw-bold text-uppercase">Fast Delivery</h5>
+                    <h2 class="display-4 fw-bold mb-3">Freshness at your <br>doorstep in <span class="text-secondary">30
+                            Mins</span></h2>
+                    <p class="lead text-muted">We guarantee freshness. If the ice melts, the juice is on us.</p>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-primary shadow-lg btn-lg">Order Now</a>
+                        <a href="tel:123456" class="btn btn-outline-dark btn-lg"><i class="fas fa-phone-alt me-2"></i>
+                            Call Us</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="delivery-small-card mb-3 d-flex align-items-end p-3 text-white fw-bold"
+                                style="background-image:url('img/AppleDel.png');">
+                                <span class="bg-dark bg-opacity-50 px-2 rounded">Crisp Apples</span>
+                            </div>
+                            <div class="delivery-small-card d-flex align-items-end p-3 text-white fw-bold"
+                                style="background-image:url('img/MangoDel.png');">
+                                <span class="bg-dark bg-opacity-50 px-2 rounded">Alphonso Mango</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="delivery-tall-card d-flex align-items-end p-3 text-white fw-bold"
+                                style="background-image:url('img/OrangeDel.jpg');">
+                                <div>
+                                    <h3>Citrus Kick</h3>
+                                    <button class="btn btn-sm btn-light rounded-pill mt-2 text-warning">Get It</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔵 FOOTER -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="text-white fw-bold mb-3">PURE FUEL</h3>
+                    <p class="text-muted">Revitalizing your life with the purest essence of nature. No additives, just
+                        health.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4 text-center">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <div class="footer-links d-flex flex-column gap-2">
+                        <a href="#home">Home</a>
+                        <a href="#aboutus">Benefits</a>
+                        <a href="#products">Menu</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4 text-lg-end">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <p class="mb-1"><i class="fas fa-phone-alt me-2 text-success"></i> +91 9999-999-999</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2 text-success"></i> purefuel@gmail.com</p>
+                    <p class="text-muted small mt-2">Bandra Kurla Complex, Mumbai, India</p>
+
+                    <div class="mt-3">
+                        <img src="img/logo.png" alt="FSSAI" style="height: 40px; opacity: 0.7;">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary mt-4">
+            <div class="text-center text-muted small">
+                © 2025 PURE FUEL. All Rights Reserved. Designed with <i class="fas fa-heart text-danger"></i>.
+            </div>
+        </div>
+    </footer>
+
+    <!-- (Keep your Modals here with the same ID as in your original code) -->
+    <!-- EXAMPLE MODAL 1 -->
+    <div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Liver Light</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <img src="img/juicebootle.jpg" class="img-fluid mb-3" style="max-height: 200px;">
+                    <p class="lead text-dark">Keelanelli + Lemon</p>
+                    <p class="text-muted">A powerful detox blend designed to cleanse your liver and regulate blood sugar
+                        naturally.</p>
+                    <div class="alert alert-light border">
+                        <i class="fas fa-info-circle me-2 text-warning"></i> Best consumed on an empty stomach.
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center pb-4 border-0">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success rounded-pill px-4">Buy Now - ₹100</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add other modals similarly -->
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // DATA: Configuration for your 3 bottles
+            const heroData = [
+                {
+                    id: 1,
+                    img: "img/juice1.png",      // Mango Bottle
+                    splash: "img/splash-yellow.png", // Optional: Different color splash per fruit
+                    color: "#fffaeb",           // Background Color
+                    title: "MANGO",
+                    sub: "Indian",
+                    accent: "#FF9800",
+                    fruitIcon: "img/fruit1.png"
+                },
+                {
+                    id: 2,
+                    img: "img/juice2.png",      // Apple/Red Bottle
+                    splash: "img/splash-red.png",
+                    color: "#fff0f0",
+                    title: "APPLE",
+                    sub: "Crisp",
+                    accent: "#dc3545",
+                    fruitIcon: "img/fruit2.png" // Ensure this image exists
+                },
+                {
+                    id: 3,
+                    img: "img/juice3.png",      // Kiwi/Green Bottle
+                    splash: "img/splash-green.png",
+                    color: "#f0fff4",
+                    title: "KIWI",
+                    sub: "Zesty",
+                    accent: "#4CAF50",
+                    fruitIcon: "img/fruit3.png" // Ensure this image exists
+                }
+            ];
+
+            // ELEMENTS
+            const bg = document.querySelector(".home-page");
+            const bottle = document.querySelector(".hero-bottle");
+            const splash = document.querySelector(".hero-splash");
+            const titleMain = document.querySelector("#main-title");
+            const fruitName = document.querySelector("#fruit-name");
+            const fruitImg = document.querySelector(".fruit-img-1");
+
+            let currentIndex = 0;
+
+            function changeBottle() {
+                // 1. Calculate next index
+                currentIndex = (currentIndex + 1) % heroData.length;
+                const data = heroData[currentIndex];
+
+                // 2. TRIGGER ANIMATION START
+
+                // A. Splash Explodes IN
+                // (If you have different colored splash images, change src here)
+                // splash.src = data.splash; 
+                splash.classList.add("active");
+
+                // B. Bottle Shrinks/Fades OUT
+                bottle.classList.add("change");
+
+                // 3. WAIT FOR SPLASH TO COVER (300ms) THEN SWAP DATA
+                setTimeout(() => {
+
+                    // Swap Images & Text
+                    bottle.src = data.img;
+                    fruitName.innerText = data.title;
+                    fruitName.style.color = data.accent;
+                    bg.style.backgroundColor = data.color;
+
+                    if (fruitImg) fruitImg.src = data.fruitIcon;
+
+                    // 4. TRIGGER ANIMATION END (Reveal New Bottle)
+                    setTimeout(() => {
+                        // Splash Fades OUT
+                        splash.classList.remove("active");
+
+                        // New Bottle Pops IN
+                        bottle.classList.remove("change");
+                    }, 200); // Small delay to ensure image loaded
+
+                }, 400); // This matches roughly half the CSS transition time
+            }
+
+            // Run every 4 seconds
+            setInterval(changeBottle, 4000);
+        });
+    </script>
+    <script src="./js/home.js"></script>
+</body>
+
+</html>

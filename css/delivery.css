@@ -1,9 +1,8 @@
 .delivery-page{
-  background:#ffffff;
+  /* background:#ffffff; */
   font-family:'Poppins',sans-serif;
   position: relative;
   z-index: 10;
-  margin-top: 40px;
 }
 
 /* FOOD CARDS */
@@ -75,12 +74,12 @@
   }
 
   /* Center the center image (already img tag) */
-  .delivery-img {
+  /* .delivery-img {
     max-width: 100px !important;
     display: block;
     margin: 0 auto 20px auto;
     
-  }
+  } */
 
   /* Remove extra margins for top section */
   .delivery-custom-right {
@@ -102,24 +101,38 @@
 }
 
 .delivery-img {
+  display: inline-block !important;
   position: relative;
-  transform: translateX(0);
-  animation: deliveryMove 5s linear infinite;
+  animation: deliveryMove 5s ease-in-out infinite alternate;
+   width: 200px;       /* fixed width */
 }
 
 @keyframes deliveryMove {
-  0% {
-    transform: translateX(0);       /* start position */
+  from { transform: translateX(-100px); }
+  to   { transform: translateX(400px); }
+}
+
+@media (max-width: 768px) {
+  .delivery-img {
+    animation: deliveryMoveMobile 4s ease-in-out infinite alternate;
   }
-   20% {
-    transform: translateX(-100px);    /* go back MORE */
-   }
-  100% {
-    transform: translateX(100px);   /* move forward continuously */
+
+  @keyframes deliveryMoveMobile {
+    from { transform: translateX(-35px); }
+    to   { transform: translateX(100px); }
   }
 }
 
 
-
-
-
+.delivery-small-card,
+.delivery-tall-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .delivery-page .row.g-3 > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
