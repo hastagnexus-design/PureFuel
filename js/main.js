@@ -86,35 +86,35 @@
 })(jQuery);
 
 
-  const itemCards = document.querySelectorAll('.item-card');
-  const promoCards = document.querySelectorAll('.promo-card');
-// const productCards = document.querySelectorAll('.products .products-item.animate-fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+//   const itemCards = document.querySelectorAll('.item-card');
+//   const promoCards = document.querySelectorAll('.promo-card');
+// // const productCards = document.querySelectorAll('.products .products-item.animate-fade-up');
+//   const cardObserver  = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
 
-        // ITEM CARDS (bottom → top + floating)
-        if (entry.target.classList.contains('item-card')) {
-          entry.target.style.animation =
-            'riseUp 0.8s forwards, float3d 5s ease-in-out infinite';
-        }
+//         // ITEM CARDS (bottom → top + floating)
+//         if (entry.target.classList.contains('item-card')) {
+//           entry.target.style.animation =
+//             'riseUp 0.8s forwards, float3d 5s ease-in-out infinite';
+//         }
 
-        // PROMO CARDS (alternate left/right automatically)
-        if (entry.target.classList.contains('promo-card')) {
-          const index = [...promoCards].indexOf(entry.target);
-          entry.target.style.animation =
-            index % 2 === 0
-              ? 'slideInLeft 0.8s forwards'
-              : 'slideInRight 0.8s forwards';
-        }
+//         // PROMO CARDS (alternate left/right automatically)
+//         if (entry.target.classList.contains('promo-card')) {
+//           const index = [...promoCards].indexOf(entry.target);
+//           entry.target.style.animation =
+//             index % 2 === 0
+//               ? 'slideInLeft 0.8s forwards'
+//               : 'slideInRight 0.8s forwards';
+//         }
 
-        observer.unobserve(entry.target); // animate once
-      }
-    });
-  }, { threshold: 0.3 });
+//         cardObserver .unobserve(entry.target); // animate once
+//       }
+//     });
+//   }, { threshold: 0.3 });
 
-  itemCards.forEach(card => observer.observe(card));
-  promoCards.forEach(card => observer.observe(card));
+//   itemCards.forEach(card => cardObserver .observe(card));
+//   promoCards.forEach(card => cardObserver .observe(card));
 //   productCards.forEach(card => observer.observe(card));
 
 
